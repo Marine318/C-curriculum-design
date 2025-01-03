@@ -1,0 +1,507 @@
+#include"common.h"
+#include"CREATE.h"
+
+void insert_whole(const char *currentfile,const char *desfile)
+{
+	FILE *fp1;//被打散的文档文件
+	FILE *fp2;//终点文件
+	char str[15];//坐标数组
+	char o[4];//序号数组
+	int i,j,k;//循环参数
+	int num[SIZE]={0};
+	int absent;//代表缺少的坐标
+	int flag;//是否缺少？
+	char string[SIZE][15];//存储所有坐标的数组
+	if((fp1=fopen(desfile,"rt"))==NULL)
+	{
+		printf("not enough!");
+
+		exit(1);
+	}
+	for(i=0;feof(fp1)==0;i++)//终点坐标全部存入string
+	{
+		fgets(string[i],15,fp1);
+		fgetc(fp1);
+	}
+	fclose(fp1);
+	if((fp2=fopen(currentfile,"at"))==NULL)
+    {
+	  printf("can't at");
+      exit(1);
+    }
+    str[4]='R';
+    for(i=0;feof(fp2)==0;i++)
+    {
+    	fgets(str,15,fp2);
+    	fgetc(fp2);
+    	for(k=0;k<3;k++) o[k]=str[k];
+    	num[i]=atoi(o);
+	}//被打散文档的整形坐标储存数组
+	for(i=0;i<SIZE;i++)
+	{
+		flag=0;
+		for(j=0;j<SIZE;j++)
+		{
+			if(num[j]==i)
+			{
+				flag=1;
+				break;
+			}
+			else absent=i-1;
+		}
+		if(flag==0)
+		{
+			fputs(string[absent],fp2);
+			fputc('\n',fp2);
+		}
+	}//等于把所有中间已经到达终点的坐标让其一直显示！！！！
+	fclose(fp2);
+}
+
+
+//对400个文件进行补充
+void supply_file1(const char *desfile)//终点txt文档
+{
+  insert_whole(file1,desfile);
+  insert_whole(file2,desfile);
+  insert_whole(file3,desfile);
+  insert_whole(file4,desfile);
+  insert_whole(file5,desfile);
+  insert_whole(file6,desfile);
+  insert_whole(file7,desfile);
+  insert_whole(file8,desfile);
+  insert_whole(file9,desfile);
+  insert_whole(file10,desfile);
+  insert_whole(file11,desfile);
+  insert_whole(file12,desfile);
+  insert_whole(file13,desfile);
+  insert_whole(file14,desfile);
+  insert_whole(file15,desfile);
+  insert_whole(file16,desfile);
+  insert_whole(file17,desfile);
+  insert_whole(file18,desfile);
+  insert_whole(file19,desfile);
+  insert_whole(file20,desfile);
+  insert_whole(file21,desfile);
+  insert_whole(file22,desfile);
+  insert_whole(file23,desfile);
+  insert_whole(file24,desfile);
+  insert_whole(file25,desfile);
+  insert_whole(file26,desfile);
+  insert_whole(file27,desfile);
+  insert_whole(file28,desfile);
+  insert_whole(file29,desfile);
+  insert_whole(file30,desfile);
+  insert_whole(file31,desfile);
+  insert_whole(file32,desfile);
+  insert_whole(file33,desfile);
+  insert_whole(file34,desfile);
+  insert_whole(file35,desfile);
+  insert_whole(file36,desfile);
+  insert_whole(file37,desfile);
+  insert_whole(file38,desfile);
+  insert_whole(file39,desfile);
+  insert_whole(file40,desfile);
+  insert_whole(file41,desfile);
+  insert_whole(file42,desfile);
+  insert_whole(file43,desfile);
+  insert_whole(file44,desfile);
+  insert_whole(file45,desfile);
+  insert_whole(file46,desfile);
+  insert_whole(file47,desfile);
+  insert_whole(file48,desfile);
+  insert_whole(file49,desfile);
+  insert_whole(file50,desfile);
+}
+
+void supply_file2(const char *desfile)
+{
+  insert_whole(file51,desfile);
+  insert_whole(file52,desfile);
+  insert_whole(file53,desfile);
+  insert_whole(file54,desfile);
+  insert_whole(file55,desfile);
+  insert_whole(file56,desfile);
+  insert_whole(file57,desfile);
+  insert_whole(file58,desfile);
+  insert_whole(file59,desfile);
+  insert_whole(file60,desfile);
+  insert_whole(file61,desfile);
+  insert_whole(file62,desfile);
+  insert_whole(file63,desfile);
+  insert_whole(file64,desfile);
+  insert_whole(file65,desfile);
+  insert_whole(file66,desfile);
+  insert_whole(file67,desfile);
+  insert_whole(file68,desfile);
+  insert_whole(file69,desfile);
+  insert_whole(file70,desfile);
+  insert_whole(file71,desfile);
+  insert_whole(file72,desfile);
+  insert_whole(file73,desfile);
+  insert_whole(file74,desfile);
+  insert_whole(file75,desfile);
+  insert_whole(file76,desfile);
+  insert_whole(file77,desfile);
+  insert_whole(file78,desfile);
+  insert_whole(file79,desfile);
+  insert_whole(file80,desfile);
+  insert_whole(file81,desfile);
+  insert_whole(file82,desfile);
+  insert_whole(file83,desfile);
+  insert_whole(file84,desfile);
+  insert_whole(file85,desfile);
+  insert_whole(file86,desfile);
+  insert_whole(file87,desfile);
+  insert_whole(file88,desfile);
+  insert_whole(file89,desfile);
+  insert_whole(file90,desfile);
+  insert_whole(file91,desfile);
+  insert_whole(file92,desfile);
+  insert_whole(file93,desfile);
+  insert_whole(file94,desfile);
+  insert_whole(file95,desfile);
+  insert_whole(file96,desfile);
+  insert_whole(file97,desfile);
+  insert_whole(file98,desfile);
+  insert_whole(file99,desfile);
+  insert_whole(file100,desfile);
+}
+
+void supply_file3(const char *desfile)
+{
+  insert_whole(file101,desfile);
+  insert_whole(file102,desfile);
+  insert_whole(file103,desfile);
+  insert_whole(file104,desfile);
+  insert_whole(file105,desfile);
+  insert_whole(file106,desfile);
+  insert_whole(file107,desfile);
+  insert_whole(file108,desfile);
+  insert_whole(file109,desfile);
+  insert_whole(file110,desfile);
+  insert_whole(file111,desfile);
+  insert_whole(file112,desfile);
+  insert_whole(file113,desfile);
+  insert_whole(file114,desfile);
+  insert_whole(file115,desfile);
+  insert_whole(file116,desfile);
+  insert_whole(file117,desfile);
+  insert_whole(file118,desfile);
+  insert_whole(file119,desfile);
+  insert_whole(file120,desfile);
+  insert_whole(file121,desfile);
+  insert_whole(file122,desfile);
+  insert_whole(file123,desfile);
+  insert_whole(file124,desfile);
+  insert_whole(file125,desfile);
+  insert_whole(file126,desfile);
+  insert_whole(file127,desfile);
+  insert_whole(file128,desfile);
+  insert_whole(file129,desfile);
+  insert_whole(file130,desfile);
+  insert_whole(file131,desfile);
+  insert_whole(file132,desfile);
+  insert_whole(file133,desfile);
+  insert_whole(file134,desfile);
+  insert_whole(file135,desfile);
+  insert_whole(file136,desfile);
+  insert_whole(file137,desfile);
+  insert_whole(file138,desfile);
+  insert_whole(file139,desfile);
+  insert_whole(file140,desfile);
+  insert_whole(file141,desfile);
+  insert_whole(file142,desfile);
+  insert_whole(file143,desfile);
+  insert_whole(file144,desfile);
+  insert_whole(file145,desfile);
+  insert_whole(file146,desfile);
+  insert_whole(file147,desfile);
+  insert_whole(file148,desfile);
+  insert_whole(file149,desfile);
+  insert_whole(file150,desfile);
+}
+
+void supply_file4(const char *desfile)
+{
+  insert_whole(file151,desfile);
+  insert_whole(file152,desfile);
+  insert_whole(file153,desfile);
+  insert_whole(file154,desfile);
+  insert_whole(file155,desfile);
+  insert_whole(file156,desfile);
+  insert_whole(file157,desfile);
+  insert_whole(file158,desfile);
+  insert_whole(file159,desfile);
+  insert_whole(file160,desfile);
+  insert_whole(file161,desfile);
+  insert_whole(file162,desfile);
+  insert_whole(file163,desfile);
+  insert_whole(file164,desfile);
+  insert_whole(file165,desfile);
+  insert_whole(file166,desfile);
+  insert_whole(file167,desfile);
+  insert_whole(file168,desfile);
+  insert_whole(file169,desfile);
+  insert_whole(file170,desfile);
+  insert_whole(file171,desfile);
+  insert_whole(file172,desfile);
+  insert_whole(file173,desfile);
+  insert_whole(file174,desfile);
+  insert_whole(file175,desfile);
+  insert_whole(file176,desfile);
+  insert_whole(file177,desfile);
+  insert_whole(file178,desfile);
+  insert_whole(file179,desfile);
+  insert_whole(file180,desfile);
+  insert_whole(file181,desfile);
+  insert_whole(file182,desfile);
+  insert_whole(file183,desfile);
+  insert_whole(file184,desfile);
+  insert_whole(file185,desfile);
+  insert_whole(file186,desfile);
+  insert_whole(file187,desfile);
+  insert_whole(file188,desfile);
+  insert_whole(file189,desfile);
+  insert_whole(file190,desfile);
+  insert_whole(file191,desfile);
+  insert_whole(file192,desfile);
+  insert_whole(file193,desfile);
+  insert_whole(file194,desfile);
+  insert_whole(file195,desfile);
+  insert_whole(file196,desfile);
+  insert_whole(file197,desfile);
+  insert_whole(file198,desfile);
+  insert_whole(file199,desfile);
+  insert_whole(file200,desfile);
+}
+
+void supply_file5(const char *desfile)
+{
+  insert_whole(file201,desfile);
+  insert_whole(file202,desfile);
+  insert_whole(file203,desfile);
+  insert_whole(file204,desfile);
+  insert_whole(file205,desfile);
+  insert_whole(file206,desfile);
+  insert_whole(file207,desfile);
+  insert_whole(file208,desfile);
+  insert_whole(file209,desfile);
+  insert_whole(file210,desfile);
+  insert_whole(file211,desfile);
+  insert_whole(file212,desfile);
+  insert_whole(file213,desfile);
+  insert_whole(file214,desfile);
+  insert_whole(file215,desfile);
+  insert_whole(file216,desfile);
+  insert_whole(file217,desfile);
+  insert_whole(file218,desfile);
+  insert_whole(file219,desfile);
+  insert_whole(file220,desfile);
+  insert_whole(file221,desfile);
+  insert_whole(file222,desfile);
+  insert_whole(file223,desfile);
+  insert_whole(file224,desfile);
+  insert_whole(file225,desfile);
+  insert_whole(file226,desfile);
+  insert_whole(file227,desfile);
+  insert_whole(file228,desfile);
+  insert_whole(file229,desfile);
+  insert_whole(file230,desfile);
+  insert_whole(file231,desfile);
+  insert_whole(file232,desfile);
+  insert_whole(file233,desfile);
+  insert_whole(file234,desfile);
+  insert_whole(file235,desfile);
+  insert_whole(file236,desfile);
+  insert_whole(file237,desfile);
+  insert_whole(file238,desfile);
+  insert_whole(file239,desfile);
+  insert_whole(file240,desfile);
+  insert_whole(file241,desfile);
+  insert_whole(file242,desfile);
+  insert_whole(file243,desfile);
+  insert_whole(file244,desfile);
+  insert_whole(file245,desfile);
+  insert_whole(file246,desfile);
+  insert_whole(file247,desfile);
+  insert_whole(file248,desfile);
+  insert_whole(file249,desfile);
+  insert_whole(file250,desfile);
+}
+
+void supply_file6(const char *desfile)
+{
+  insert_whole(file251,desfile);
+  insert_whole(file252,desfile);
+  insert_whole(file253,desfile);
+  insert_whole(file254,desfile);
+  insert_whole(file255,desfile);
+  insert_whole(file256,desfile);
+  insert_whole(file257,desfile);
+  insert_whole(file258,desfile);
+  insert_whole(file259,desfile);
+  insert_whole(file260,desfile);
+  insert_whole(file261,desfile);
+  insert_whole(file262,desfile);
+  insert_whole(file263,desfile);
+  insert_whole(file264,desfile);
+  insert_whole(file265,desfile);
+  insert_whole(file266,desfile);
+  insert_whole(file267,desfile);
+  insert_whole(file268,desfile);
+  insert_whole(file269,desfile);
+  insert_whole(file270,desfile);
+  insert_whole(file271,desfile);
+  insert_whole(file272,desfile);
+  insert_whole(file273,desfile);
+  insert_whole(file274,desfile);
+  insert_whole(file275,desfile);
+  insert_whole(file276,desfile);
+  insert_whole(file277,desfile);
+  insert_whole(file278,desfile);
+  insert_whole(file279,desfile);
+  insert_whole(file280,desfile);
+  insert_whole(file281,desfile);
+  insert_whole(file282,desfile);
+  insert_whole(file283,desfile);
+  insert_whole(file284,desfile);
+  insert_whole(file285,desfile);
+  insert_whole(file286,desfile);
+  insert_whole(file287,desfile);
+  insert_whole(file288,desfile);
+  insert_whole(file289,desfile);
+  insert_whole(file290,desfile);
+  insert_whole(file291,desfile);
+  insert_whole(file292,desfile);
+  insert_whole(file293,desfile);
+  insert_whole(file294,desfile);
+  insert_whole(file295,desfile);
+  insert_whole(file296,desfile);
+  insert_whole(file297,desfile);
+  insert_whole(file298,desfile);
+  insert_whole(file299,desfile);
+  insert_whole(file300,desfile);
+}
+void supply_file7(const char *desfile)
+{
+  insert_whole(file301,desfile);
+  insert_whole(file302,desfile);
+  insert_whole(file303,desfile);
+  insert_whole(file304,desfile);
+  insert_whole(file305,desfile);
+  insert_whole(file306,desfile);
+  insert_whole(file307,desfile);
+  insert_whole(file308,desfile);
+  insert_whole(file309,desfile);
+  insert_whole(file310,desfile);
+  insert_whole(file311,desfile);
+  insert_whole(file312,desfile);
+  insert_whole(file313,desfile);
+  insert_whole(file314,desfile);
+  insert_whole(file315,desfile);
+  insert_whole(file316,desfile);
+  insert_whole(file317,desfile);
+  insert_whole(file318,desfile);
+  insert_whole(file319,desfile);
+  insert_whole(file320,desfile);
+  insert_whole(file321,desfile);
+  insert_whole(file322,desfile);
+  insert_whole(file323,desfile);
+  insert_whole(file324,desfile);
+  insert_whole(file325,desfile);
+  insert_whole(file326,desfile);
+  insert_whole(file327,desfile);
+  insert_whole(file328,desfile);
+  insert_whole(file329,desfile);
+  insert_whole(file330,desfile);
+  insert_whole(file331,desfile);
+  insert_whole(file332,desfile);
+  insert_whole(file333,desfile);
+  insert_whole(file334,desfile);
+  insert_whole(file335,desfile);
+  insert_whole(file336,desfile);
+  insert_whole(file337,desfile);
+  insert_whole(file338,desfile);
+  insert_whole(file339,desfile);
+  insert_whole(file340,desfile);
+  insert_whole(file341,desfile);
+  insert_whole(file342,desfile);
+  insert_whole(file343,desfile);
+  insert_whole(file344,desfile);
+  insert_whole(file345,desfile);
+  insert_whole(file346,desfile);
+  insert_whole(file347,desfile);
+  insert_whole(file348,desfile);
+  insert_whole(file349,desfile);
+  insert_whole(file350,desfile);
+}
+
+void supply_file8(const char *desfile)
+{
+  insert_whole(file351,desfile);
+  insert_whole(file352,desfile);
+  insert_whole(file353,desfile);
+  insert_whole(file354,desfile);
+  insert_whole(file355,desfile);
+  insert_whole(file356,desfile);
+  insert_whole(file357,desfile);
+  insert_whole(file358,desfile);
+  insert_whole(file359,desfile);
+  insert_whole(file360,desfile);
+  insert_whole(file361,desfile);
+  insert_whole(file362,desfile);
+  insert_whole(file363,desfile);
+  insert_whole(file364,desfile);
+  insert_whole(file365,desfile);
+  insert_whole(file366,desfile);
+  insert_whole(file367,desfile);
+  insert_whole(file368,desfile);
+  insert_whole(file369,desfile);
+  insert_whole(file370,desfile);
+  insert_whole(file371,desfile);
+  insert_whole(file372,desfile);
+  insert_whole(file373,desfile);
+  insert_whole(file374,desfile);
+  insert_whole(file375,desfile);
+  insert_whole(file376,desfile);
+  insert_whole(file377,desfile);
+  insert_whole(file378,desfile);
+  insert_whole(file379,desfile);
+  insert_whole(file380,desfile);
+  insert_whole(file381,desfile);
+  insert_whole(file382,desfile);
+  insert_whole(file383,desfile);
+  insert_whole(file384,desfile);
+  insert_whole(file385,desfile);
+  insert_whole(file386,desfile);
+  insert_whole(file387,desfile);
+  insert_whole(file388,desfile);
+  insert_whole(file389,desfile);
+  insert_whole(file390,desfile);
+  insert_whole(file391,desfile);
+  insert_whole(file392,desfile);
+  insert_whole(file393,desfile);
+  insert_whole(file394,desfile);
+  insert_whole(file395,desfile);
+  insert_whole(file396,desfile);
+  insert_whole(file397,desfile);
+  insert_whole(file398,desfile);
+  insert_whole(file399,desfile);
+  insert_whole(file400,desfile);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
